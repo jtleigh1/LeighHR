@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | LeighHR, LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --slate: #2E5B8A;
+      --slate-dark: #1e4a75;
+      --sandy: #F5F0E8;
+      --sandy-dark: #EDE8DF;
+      --text: #2C2C2A;
+      --text-mid: #5F5E5A;
+      --text-light: #888780;
+      --border: #D3D1C7;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 4rem;
+    }
+
+    .nav-logo img { height: 38px; width: auto; }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--text-mid);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--slate); }
+
+    .hero {
+      background: var(--sandy);
+      padding: 5rem 4rem 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--slate);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.25rem;
+      font-weight: 500;
+      color: var(--slate);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 em { font-style: italic; font-weight: 400; }
+
+    .hero-meta {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      letter-spacing: 0.02em;
+    }
+
+    .content-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 4.5rem 2rem 7rem;
+    }
+
+    .policy-section {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .policy-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .policy-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      font-weight: 500;
+      color: var(--slate);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .policy-section p {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.85;
+      margin-bottom: 0.85rem;
+    }
+
+    .policy-section p:last-child { margin-bottom: 0; }
+
+    .policy-section ul { margin: 0.5rem 0 0.85rem 1.5rem; }
+
+    .policy-section ul li {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 0.35rem;
+    }
+
+    .callout {
+      background: #EBF2FA;
+      border-left: 3px solid var(--slate);
+      padding: 1rem 1.4rem;
+      border-radius: 0 4px 4px 0;
+      margin: 1.25rem 0;
+    }
+
+    .callout p {
+      font-size: 0.9rem;
+      color: var(--slate-dark);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .contact-card {
+      background: var(--sandy);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem 2rem;
+      margin-top: 1.25rem;
+    }
+
+    .contact-card p {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      margin-bottom: 0.3rem;
+      line-height: 1.6;
+    }
+
+    .contact-card p:last-child { margin-bottom: 0; }
+    .contact-card strong { color: var(--text); font-weight: 500; }
+    .contact-card a { color: var(--slate); text-decoration: none; }
+    .contact-card a:hover { text-decoration: underline; }
+
+    a { color: var(--slate); }
+
+    footer {
+      background: var(--text);
+      color: var(--text-light);
+      text-align: center;
+      padding: 2.5rem 2rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.03em;
+    }
+
+    footer a { color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--white); }
+    footer .sep { margin: 0 0.6rem; opacity: 0.4; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { padding: 3rem 1.5rem 2.5rem; }
+      .hero h1 { font-size: 2.25rem; }
+      .content-wrap { padding: 3rem 1.5rem 5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="https://leighhr.com" class="nav-logo">
+      <img src="https://leighhr.com/LeighHR_llc_logo.png" alt="LeighHR, LLC" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="https://leighhr.com/#about">About</a></li>
+      <li><a href="https://leighhr.com/#services">Services</a></li>
+      <li><a href="https://leighhr.com/#testimonials">Testimonials</a></li>
+      <li><a href="https://leighhr.com/#contact">Let's Talk</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy <em>Policy</em></h1>
+    <p class="hero-meta">Last updated: June 2026 &nbsp;&middot;&nbsp; LeighHR, LLC</p>
+  </section>
+
+  <div class="content-wrap">
+
+    <div class="policy-section">
+      <h2>Who We Are</h2>
+      <p>LeighHR, LLC ("we," "us," "our") provides fractional HR executive leadership services and operates the tools and services available at leighhr.com.</p>
+      <p>Questions about this policy? Contact us at <a href="mailto:jleigh@leighhr.com">jleigh@leighhr.com</a>.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>What We Collect</h2>
+      <p>When you use our tools or services, we may collect:</p>
+      <ul>
+        <li>Your email address</li>
+        <li>Information you voluntarily submit through our tools or forms</li>
+        <li>A summary or output generated from content you provide</li>
+        <li>Your responses to optional fields such as skills, interests, or goals</li>
+      </ul>
+      <div class="callout">
+        <p>We only collect what you choose to share. All submissions are voluntary.</p>
+      </div>
+    </div>
+
+    <div class="policy-section">
+      <h2>How We Use Your Information</h2>
+      <p>We use your information to:</p>
+      <ul>
+        <li>Deliver the service or tool output you requested</li>
+        <li>Send your results to the email address you provide</li>
+        <li>Occasionally share resources, insights, or information about services offered by LeighHR, LLC</li>
+        <li>Improve our tools and services over time</li>
+      </ul>
+      <p>By submitting your email and checking the consent box, you agree to receive follow-up communications from LeighHR, LLC. You may unsubscribe at any time by replying "unsubscribe" to any email or by contacting us directly.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>What We Don't Do</h2>
+      <ul>
+        <li>We do not sell your data to third parties — ever</li>
+        <li>We do not share your personal information with employers, recruiters, or job boards</li>
+        <li>We do not use your information for advertising or retargeting</li>
+        <li>We do not store submitted content long-term beyond what is needed to deliver your requested output</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2>Data Retention</h2>
+      <p>Email addresses and profile summaries are retained to allow us to follow up with relevant resources. Submitted content is processed to deliver your requested output and is not stored in raw form long-term.</p>
+      <p>You may request deletion of your data at any time. We will confirm and complete your request within 30 days.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Security</h2>
+      <p>Your data is stored securely with encryption at rest, access controls, and restricted administrative permissions. We take the privacy of sensitive personal and professional information seriously.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Your Rights</h2>
+      <p>Depending on your location, you may have rights under GDPR, CCPA, or similar privacy laws, including:</p>
+      <ul>
+        <li>The right to access the data we hold about you</li>
+        <li>The right to correct inaccurate information</li>
+        <li>The right to request deletion of your data</li>
+        <li>The right to opt out of marketing communications</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at the address below.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. Continued use of our tools or services after changes are posted constitutes acceptance of the updated policy.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Contact Us</h2>
+      <p>Questions, requests, or concerns about your data:</p>
+      <div class="contact-card">
+        <p><strong>LeighHR, LLC</strong></p>
+        <p>Norfolk, Virginia</p>
+        <p>Email: <a href="mailto:jleigh@leighhr.com">jleigh@leighhr.com</a></p>
+        <p>Web: <a href="https://leighhr.com">leighhr.com</a></p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>
+      LeighHR, LLC
+      <span class="sep">&middot;</span>
+      &copy; 2026 LeighHR, LLC. Norfolk, VA. All rights reserved.
+      <span class="sep">&middot;</span>
+      <a href="https://leighhr.com">Home</a>
+      <span class="sep">&middot;</span>
+      <a href="https://leighhr.com/#services">Services</a>
+      <span class="sep">&middot;</span>
+      <a href="https://leighhr.com/#contact">Contact</a>
+    </p>
+  </footer>
+
+</body>
+</html>
