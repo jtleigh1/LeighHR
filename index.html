@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hilltop Geese LLC | Long-Term Rentals, Northern Virginia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;0,9..144,650;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#241F18;
+    --maroon:#5A2018;
+    --bark:#4B3A22;
+    --olive:#6E7A3A;
+    --rust:#A8472A;
+    --gold:#B8862E;
+    --plum:#38213E;
+    --dusty:#93A8B0;
+    --parchment:#F1E9D7;
+    --parchment-2:#E6DAC0;
+    --line:rgba(36,31,24,0.14);
+    --line-dark:rgba(241,233,215,0.16);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:'Work Sans',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces',serif;
+    font-weight:650;
+    letter-spacing:-0.01em;
+    color:var(--bark);
+    line-height:1.06;
+  }
+  em{font-style:italic; font-weight:500;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 40px;}
+  @media (max-width:640px){ .wrap{padding:0 22px;} }
+
+  .eyebrow{
+    font-family:'Work Sans',sans-serif; text-transform:uppercase;
+    letter-spacing:0.18em; font-size:0.74rem; font-weight:700;
+    color:var(--gold); display:flex; align-items:center; gap:10px; margin-bottom:18px;
+  }
+  .fly-mark{color:var(--gold); flex-shrink:0; overflow:visible;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:15px 30px;
+    font-family:'Work Sans',sans-serif; font-weight:600; font-size:0.9rem;
+    border-radius:999px; border:1.5px solid transparent; transition:all 0.2s ease;
+  }
+  .btn-fill{background:var(--rust); color:var(--parchment); border-color:var(--rust);}
+  .btn-fill:hover{background:var(--maroon); border-color:var(--maroon); transform:translateY(-1px);}
+  .btn-line{border-color:currentColor;}
+  .btn-line:hover{background:var(--ink); color:var(--parchment); border-color:var(--ink);}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(241,233,215,0.94); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{display:flex; align-items:center; justify-content:space-between; padding:20px 40px;}
+  .brand{display:flex; align-items:center; gap:11px; font-family:'Fraunces',serif; font-weight:650; font-size:1.2rem; color:var(--bark);}
+  .brand small{font-family:'Work Sans',sans-serif; font-weight:600; font-size:0.6rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--maroon); position:relative; top:1px;}
+  .logo-mark{width:38px; height:38px; border-radius:50%; flex-shrink:0; object-fit:cover;}
+  nav ul{list-style:none; display:flex; gap:34px;}
+  nav ul li a{font-size:0.84rem; font-weight:600; letter-spacing:0.02em; position:relative; padding-bottom:4px;}
+  nav ul li a::after{content:""; position:absolute; left:0; bottom:0; width:0; height:2px; background:var(--rust); transition:width 0.25s ease;}
+  nav ul li a:hover::after{width:100%;}
+  @media (max-width:760px){
+    nav.wrap{padding:14px 18px; flex-wrap:wrap; gap:10px;}
+    nav ul{gap:18px; width:100%; justify-content:flex-start; flex-wrap:wrap;}
+    nav ul li a{font-size:0.8rem;}
+    .brand{font-size:1.05rem;}
+    .brand small{display:none;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative; min-height:640px; display:flex; align-items:center;
+    border-bottom:1px solid var(--line); overflow:hidden;
+  }
+  .hero-bg{position:absolute; top:0; right:0; bottom:0; left:0; z-index:0;}
+  .hero-bg img{width:100%; height:100%; object-fit:cover; object-position:85% 58%;}
+  .hero-fade{
+    position:absolute; top:0; right:0; bottom:0; left:0; z-index:1;
+    background:linear-gradient(90deg,
+      var(--parchment) 0%,
+      var(--parchment) 40%,
+      rgba(241,233,215,0.94) 50%,
+      rgba(241,233,215,0.62) 63%,
+      rgba(241,233,215,0.2) 78%,
+      rgba(241,233,215,0) 92%);
+  }
+  .hero-copy{padding:100px 40px; max-width:560px; position:relative; z-index:2;}
+  .hero-copy h1{font-size:clamp(2.5rem,4.4vw,3.6rem); max-width:11ch; margin-bottom:24px;}
+  .hero-copy h1 em{color:var(--rust);}
+  .hero-copy p.lede{font-size:1.12rem; color:var(--bark); max-width:38ch; margin-bottom:34px;}
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
+  @media (max-width:900px){
+    .hero{min-height:560px;}
+    .hero-copy{padding:64px 22px;}
+    .hero-fade{background:linear-gradient(180deg,
+      var(--parchment) 0%, var(--parchment) 42%,
+      rgba(241,233,215,0.85) 55%, rgba(241,233,215,0.35) 72%, rgba(241,233,215,0) 90%);}
+  }
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  .section{padding:100px 0; border-bottom:1px solid var(--line); position:relative; overflow:hidden;}
+  .section-dark{background:var(--ink); border-bottom:1px solid var(--line-dark);}
+  .section-dark h2, .section-dark .about-name{color:var(--parchment);}
+  .section-dark .eyebrow{color:var(--gold);}
+  @media (max-width:640px){ .section{padding:64px 0;} }
+
+  /* ---------- LISTINGS ---------- */
+  .property{display:grid; grid-template-columns:1.15fr 1fr; gap:56px; align-items:center;}
+  .property-photo{position:relative;}
+  .property-photo img{width:100%; aspect-ratio:4/3.1; object-fit:cover; border-radius:20px;}
+  .property-tag{
+    position:absolute; top:20px; left:20px; background:var(--gold); color:var(--ink);
+    font-weight:700; font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase;
+    padding:8px 16px; border-radius:999px;
+  }
+  .property-body h3{font-size:1.9rem; margin-bottom:8px;}
+  .property-loc{font-weight:600; color:var(--maroon); margin-bottom:22px; font-size:0.95rem;}
+  .spec-row{display:flex; gap:26px; margin-bottom:22px; flex-wrap:wrap;}
+  .spec{font-size:0.86rem; color:var(--bark);}
+  .spec b{display:block; font-family:'Fraunces',serif; font-size:1.5rem; color:var(--ink); font-weight:650;}
+  .property-body p.desc{color:var(--ink); margin-bottom:28px; max-width:46ch;}
+  .property-body p.desc a{color:var(--rust); font-weight:600; border-bottom:1px solid var(--rust);}
+  .price-row{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; padding-top:22px; border-top:1px dashed var(--line);}
+  .price-label{font-weight:700; color:var(--rust); font-size:0.86rem;}
+  @media (max-width:840px){ .property{grid-template-columns:1fr;} }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid; grid-template-columns:0.62fr 1.38fr; gap:64px; align-items:center; position:relative; z-index:1;}
+  .about-photo{position:relative;}
+  .about-photo img{width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:20px; box-shadow:0 24px 48px rgba(36,31,24,0.18);}
+  .about-name{font-size:1.55rem; margin-bottom:4px;}
+  .about-role{font-size:0.86rem; color:var(--maroon); font-weight:600; margin-bottom:16px;}
+  .linkedin-link{display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:0.86rem; color:var(--maroon); border-bottom:1.5px solid var(--rust); padding-bottom:2px; margin-bottom:22px;}
+  .linkedin-link svg{width:15px; height:15px;}
+  .about-text p{color:var(--ink); margin-bottom:16px; max-width:54ch;}
+  blockquote{font-family:'Fraunces',serif; font-style:italic; font-size:1.3rem; color:var(--maroon); max-width:42ch; margin-top:22px; padding-left:22px; border-left:3px solid var(--plum); line-height:1.4;}
+  @media (max-width:840px){ .about-grid{grid-template-columns:1fr; gap:36px;} .about-photo{max-width:280px;} }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .t-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--line-dark); position:relative; z-index:1;}
+  .t-card{background:var(--ink); padding:38px 32px;}
+  .t-card:nth-child(2){transform:translateY(22px);}
+  @media (max-width:840px){ .t-grid{grid-template-columns:1fr; gap:20px; background:none;} .t-card:nth-child(2){transform:none;} .t-card{border:1px solid var(--line-dark);} }
+  .t-mark{font-family:'Fraunces',serif; font-size:2.6rem; color:var(--gold); opacity:0.7; line-height:1; margin-bottom:6px;}
+  .t-quote{font-style:italic; color:var(--parchment-2); margin-bottom:20px; font-size:1rem;}
+  .t-who{font-weight:700; font-size:0.82rem; color:var(--rust); text-transform:uppercase; letter-spacing:0.04em;}
+  .t-where{font-size:0.78rem; color:var(--dusty);}
+  .placeholder-note{
+    position:relative; z-index:1; margin-top:32px; font-size:0.82rem; color:var(--dusty);
+    border:1px dashed var(--line-dark); border-radius:16px; padding:16px 20px;
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px;}
+  .contact-photo{margin-bottom:26px; border-radius:20px; overflow:hidden;}
+  .contact-photo img{width:100%; aspect-ratio:4/5; object-fit:cover; object-position:50% 15%;}
+  .contact-info h3{font-size:1.5rem; margin-bottom:14px;}
+  .contact-info p{color:var(--bark); max-width:40ch; margin-bottom:24px;}
+  .contact-detail{display:flex; align-items:center; gap:12px; margin-bottom:14px; font-size:0.92rem;}
+  .contact-detail svg{width:18px; height:18px; color:var(--rust); flex-shrink:0;}
+  form{background:var(--parchment-2); border:1px solid var(--line); border-radius:20px; padding:40px;}
+  .field{margin-bottom:20px;}
+  .field label{display:block; font-weight:700; font-size:0.76rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--bark); margin-bottom:8px;}
+  .field input, .field textarea{
+    width:100%; padding:13px 15px; border:1px solid var(--line); border-radius:12px;
+    background:var(--parchment); font-size:0.95rem; color:var(--ink); font-family:'Work Sans',sans-serif;
+  }
+  .field input:focus, .field textarea:focus{outline:2px solid var(--dusty); outline-offset:1px;}
+  .field textarea{min-height:120px; resize:vertical;}
+  .form-note{font-size:0.78rem; color:var(--bark); margin-top:10px;}
+  @media (max-width:840px){ .contact-grid{grid-template-columns:1fr;} form{padding:28px;} }
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:48px 0; background:var(--plum); color:var(--parchment-2);}
+  footer .wrap{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;}
+  .f-brand{display:flex; align-items:center; gap:10px; font-family:'Fraunces',serif; font-weight:650;}
+  footer p{font-size:0.78rem; opacity:0.75;}
+
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} .btn{transition:none;} }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">
+      <img src="logo.png" alt="Hilltop Geese logo" class="logo-mark">
+      Hilltop Geese<small>&nbsp;Property Management</small>
+    </div>
+    <ul>
+      <li><a href="#property">Listings</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-bg">
+    <img src="waterway.jpg" alt="Canada geese on a community pond in Northern Virginia">
+  </div>
+  <div class="hero-fade"></div>
+  <div class="hero-copy">
+    <div class="eyebrow"><svg class="fly-mark" viewBox="0 0 64 30" width="46" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="0" y1="24" x2="33" y2="24" stroke="currentColor" stroke-width="1.4"/>
+        <g fill="currentColor">
+          <ellipse cx="41" cy="21" rx="7" ry="4.3"/>
+          <path d="M46 18 Q51 11 58 9 Q55 12 57 13 Q53 13 50 16 Z"/>
+          <path d="M39 18 Q31 8 20 6 Q29 13 34 19 Z" opacity="0.88"/>
+          <path d="M44 17 Q54 6 63 3 Q55 10 49 16 Z" opacity="0.72"/>
+        </g>
+      </svg>Northern Virginia &middot; Long-Term Rentals</div>
+    <h1>Homes that people <em>keep coming back to.</em></h1>
+    <p class="lede">Geese return to the same nesting grounds year after year — it's instinct. Hilltop Geese LLC finds NOVA renters places worth returning to, and owners tenants worth keeping.</p>
+    <div class="hero-ctas">
+      <a href="#property" class="btn btn-fill">See our featured property</a>
+      <a href="#contact" class="btn btn-line">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="property">
+    <div class="wrap">
+    <div class="eyebrow"><svg class="fly-mark" viewBox="0 0 64 30" width="46" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="0" y1="24" x2="33" y2="24" stroke="currentColor" stroke-width="1.4"/>
+        <g fill="currentColor">
+          <ellipse cx="41" cy="21" rx="7" ry="4.3"/>
+          <path d="M46 18 Q51 11 58 9 Q55 12 57 13 Q53 13 50 16 Z"/>
+          <path d="M39 18 Q31 8 20 6 Q29 13 34 19 Z" opacity="0.88"/>
+          <path d="M44 17 Q54 6 63 3 Q55 10 49 16 Z" opacity="0.72"/>
+        </g>
+      </svg>Featured Listing</div>
+    <h2 style="font-size:clamp(1.9rem,3vw,2.5rem); margin-bottom:44px;">Hot Property of 2026</h2>
+    <div class="property">
+      <div class="property-photo">
+        <img src="condo.jpg" alt="Townhouse-style condo in McNair Farms Manors, Herndon VA">
+        <span class="property-tag">2026 Featured Pick</span>
+      </div>
+      <div class="property-body">
+        <h3>Townhouse-Style Condo, McNair Farms Manors</h3>
+        <div class="property-loc">Herndon, VA &middot; walking distance to grocery, dining, banks &amp; shopping</div>
+        <div class="spec-row">
+          <div class="spec"><b>2</b>Bed</div>
+          <div class="spec"><b>2.5</b>Bath</div>
+          <div class="spec"><b>~1,300</b>Sq Ft</div>
+          <div class="spec"><b>LT</b>Lease</div>
+        </div>
+        <p class="desc">A spacious, upgraded townhouse-style condo in popular McNair Farms Manors — third/fourth floor unit with two full floors of living space. Hardwood-like luxury vinyl on the main level, granite counters in the kitchen and baths, an Elfa-outfitted master closet plus a second walk-in, and vaulted ceilings upstairs. Washer/dryer in-unit, plenty of parking near the entrance, and community pool access in the summer. Less than a two-minute drive to the Dulles Access Road, Route 28, or the Herndon-Monroe Park &amp; Ride — and close enough to <a href="https://www.neddevines.com/" target="_blank" rel="noopener">Ned Devine's</a> for a cocktail and some dancing on a Friday night. Small pets under 40 lbs welcome with a $750 non-refundable pet deposit.</p>
+        <div class="price-row">
+          <span class="price-label">Contact for pricing &middot; open to long-term lease</span>
+          <a href="#contact" class="btn btn-fill" id="propertyContactBtn" data-property="Townhouse-Style Condo, McNair Farms Manors">Contact about this home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="eyebrow"><svg class="fly-mark" viewBox="0 0 64 30" width="46" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="0" y1="24" x2="33" y2="24" stroke="currentColor" stroke-width="1.4"/>
+        <g fill="currentColor">
+          <ellipse cx="41" cy="21" rx="7" ry="4.3"/>
+          <path d="M46 18 Q51 11 58 9 Q55 12 57 13 Q53 13 50 16 Z"/>
+          <path d="M39 18 Q31 8 20 6 Q29 13 34 19 Z" opacity="0.88"/>
+          <path d="M44 17 Q54 6 63 3 Q55 10 49 16 Z" opacity="0.72"/>
+        </g>
+      </svg>Who You're Working With</div>
+    <h2 style="font-size:clamp(1.9rem,3vw,2.5rem); margin-bottom:44px;">About Lisa</h2>
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="lisa.jpg?v=2" alt="Lisa M. Denny, Founder of Hilltop Geese LLC">
+      </div>
+      <div class="about-text">
+        <div class="about-name">Lisa M. Denny</div>
+        <div class="about-role">Founder &amp; Principal Asset Owner/Manager</div>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/lisa-denny-sphr-798951/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4v15h-4V8zm7.5 0h3.84v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-7.4c0-1.77-.03-4.04-2.46-4.04-2.47 0-2.85 1.93-2.85 3.92V23h-4V8z"/></svg>
+          Connect on LinkedIn
+        </a>
+        <p>Lisa moved to Northern Virginia in high school and settled here again after college — she's watched this market grow for decades and knows it block by block. That's not a marketing line; it's the reason she can tell you honestly whether a place is a fit before you even see it.</p>
+        <p>Hilltop Geese exists because Lisa believes long-term rentals should feel like homes, not transactions — for every resident who moves into one of her properties.</p>
+        <blockquote>"I don't rent out condos. I match people with the next place they'll call home."</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="testimonials">
+    <div class="wrap">
+    <div class="eyebrow"><svg class="fly-mark" viewBox="0 0 64 30" width="46" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="0" y1="24" x2="33" y2="24" stroke="currentColor" stroke-width="1.4"/>
+        <g fill="currentColor">
+          <ellipse cx="41" cy="21" rx="7" ry="4.3"/>
+          <path d="M46 18 Q51 11 58 9 Q55 12 57 13 Q53 13 50 16 Z"/>
+          <path d="M39 18 Q31 8 20 6 Q29 13 34 19 Z" opacity="0.88"/>
+          <path d="M44 17 Q54 6 63 3 Q55 10 49 16 Z" opacity="0.72"/>
+        </g>
+      </svg>In Their Words</div>
+    <h2 style="font-size:clamp(1.9rem,3vw,2.5rem); margin-bottom:56px;">Testimonials</h2>
+    <div class="t-grid">
+      <div class="t-card">
+        <div class="t-mark">&rdquo;</div>
+        <p class="t-quote">Lisa found us a place in three days and was upfront about everything — no surprises at move-in, none at move-out either.</p>
+        <div class="t-who">Former Resident</div>
+        <div class="t-where">Reston, VA</div>
+      </div>
+      <div class="t-card">
+        <div class="t-mark">&rdquo;</div>
+        <p class="t-quote">We rented through Hilltop Geese for four years. Maintenance requests were handled fast and Lisa actually picks up the phone.</p>
+        <div class="t-who">Former Resident</div>
+        <div class="t-where">Herndon, VA</div>
+      </div>
+      <div class="t-card">
+        <div class="t-mark">&rdquo;</div>
+        <p class="t-quote">Easiest landlord relationship I've had in Northern Virginia. Clear lease, fair rent, zero games.</p>
+        <div class="t-who">Former Resident</div>
+        <div class="t-where">Sterling, VA</div>
+      </div>
+    </div>
+    <div class="placeholder-note">Note: these three quotes are placeholder copy so the layout can be reviewed — swap in Lisa's real resident quotes (with their permission to use first name + neighborhood) before this goes live.</div>
+  </div>
+</section>
+
+<section class="section" id="contact" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="eyebrow"><svg class="fly-mark" viewBox="0 0 64 30" width="46" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="0" y1="24" x2="33" y2="24" stroke="currentColor" stroke-width="1.4"/>
+        <g fill="currentColor">
+          <ellipse cx="41" cy="21" rx="7" ry="4.3"/>
+          <path d="M46 18 Q51 11 58 9 Q55 12 57 13 Q53 13 50 16 Z"/>
+          <path d="M39 18 Q31 8 20 6 Q29 13 34 19 Z" opacity="0.88"/>
+          <path d="M44 17 Q54 6 63 3 Q55 10 49 16 Z" opacity="0.72"/>
+        </g>
+      </svg>Let's Talk</div>
+    <h2 style="font-size:clamp(1.9rem,3vw,2.5rem); margin-bottom:44px;">Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-photo">
+          <img src="mailbox.jpg" alt="Hilltop Geese mailbox and garden bed">
+        </div>
+        <h3>Ask about a property, or get on the list for what's next.</h3>
+        <p>Looking for a long-term rental in Northern Virginia, or want to hear when a new property opens up? Send a note and Lisa will get back to you directly.</p>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 5h18v14H3z M3 6l9 7 9-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Email response within 1–2 business days</span>
+        </div>
+        <div class="contact-detail" style="color:var(--dusty);">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span style="color:var(--ink);">Serving the Northern VA metro area</span>
+        </div>
+      </div>
+
+      <!--
+        FORM SETUP — READ ME:
+        This form is wired to Formspree so submissions land in Lisa's inbox without any server.
+        1. Create a free account at https://formspree.io and add Lisa's email.
+        2. Formspree gives you an endpoint like https://formspree.io/f/xxxxabcd
+        3. Replace YOUR_FORMSPREE_ID below with that ID.
+        Until that's done, the form falls back to opening the visitor's email client (mailto),
+        which works but is less reliable than Formspree.
+      -->
+      <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Tell us what you're looking for, or which property you're asking about."></textarea>
+        </div>
+        <button type="submit" class="btn btn-fill" style="width:100%; justify-content:center; border:none; cursor:pointer;">Send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="flex-direction:column; align-items:flex-start; gap:10px;">
+    <div style="display:flex; align-items:center; justify-content:space-between; width:100%; flex-wrap:wrap; gap:16px;">
+      <div class="f-brand"><img src="logo.png" alt="Hilltop Geese logo" style="width:26px; height:26px; border-radius:50%;">&nbsp;Hilltop Geese LLC</div>
+      <p>&copy; 2026 Hilltop Geese LLC &middot; Northern Virginia</p>
+    </div>
+    <p style="font-size:0.72rem; opacity:0.6; max-width:60ch;">Hilltop Geese LLC is a private property owner renting units it owns. It is not a licensed real estate brokerage and does not manage property on behalf of other owners.</p>
+  </div>
+</footer>
+
+<script>
+  var propertyBtn = document.getElementById('propertyContactBtn');
+  if(propertyBtn){
+    propertyBtn.addEventListener('click', function(){
+      var propertyName = this.getAttribute('data-property');
+      var messageField = document.getElementById('message');
+      if(messageField && !messageField.value){
+        messageField.value = "I'm interested in: " + propertyName + "\n\n";
+      }
+      setTimeout(function(){
+        if(messageField){
+          messageField.focus();
+          messageField.setSelectionRange(messageField.value.length, messageField.value.length);
+        }
+      }, 450);
+    });
+  }
+
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    var action = this.getAttribute('action');
+    if(action.indexOf('YOUR_FORMSPREE_ID') !== -1){
+      e.preventDefault();
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
+      var body = encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message);
+      window.location.href = 'mailto:lisa.denny1@gmail.com?subject=Website%20Inquiry&body=' + body;
+    }
+  });
+</script>
+
+</body>
+</html>
