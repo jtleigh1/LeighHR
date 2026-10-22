@@ -16,13 +16,13 @@
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
-    --slate: #4a6080; --slate-dark: #2d3f54; --slate-light: #6b85a0;
+    --slate: #4b5f75; --slate-dark: #2d3f54; --slate-light: #6b85a0;
     --slate-pale: #e8edf2; --gold: #c4a882; --white: #ffffff;
     --off-white: #f7f8fa; --text: #1a2332; --text-light: #5a6a7a;
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'DM Sans', sans-serif; color: var(--text); overflow-x: hidden; }
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 4rem; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(74,96,128,0.1); transition: all 0.3s; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 4rem; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(75,95,117,0.1); transition: all 0.3s; }
   .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--slate-dark); letter-spacing: 0.02em; text-decoration: none; }
   .nav-logo span { color: var(--gold); }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
@@ -104,7 +104,7 @@
   .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
   .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
   .form-group label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); }
-  .form-group input, .form-group textarea, .form-group select { padding: 0.9rem 1rem; border: 1px solid rgba(74,96,128,0.2); background: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--text); outline: none; transition: border-color 0.2s; border-radius: 0; -webkit-appearance: none; }
+  .form-group input, .form-group textarea, .form-group select { padding: 0.9rem 1rem; border: 1px solid rgba(75,95,117,0.2); background: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--text); outline: none; transition: border-color 0.2s; border-radius: 0; -webkit-appearance: none; }
   .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--slate); }
   .form-group textarea { height: 120px; resize: vertical; }
   .form-submit { background: var(--slate-dark); color: var(--white); border: none; padding: 1rem 2.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; align-self: flex-start; }
@@ -155,7 +155,7 @@
 <a href="#home" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
 <img src="LeighHR_llc_logo.png" alt="LeighHR LLC" style="height:40px; width:auto;">
  <span style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:600; color:#2d3f54;">
-  Leigh<span style="color:#c4a882;">HR</span><span style="color:#4a6080;">, LLC</span>
+  Leigh<span style="color:#c4a882;">HR</span><span style="color:#4b5f75;">, LLC</span>
   </span>
 </a>
   <ul class="nav-links">
@@ -262,6 +262,9 @@
     <div class="service-card fade-in"><div class="service-num">02</div><div class="service-title">Workplace Conflict Navigation</div><p class="service-desc">Confidential guidance through a difficult workplace situation, before you decide next steps.</p></div>
     <div class="service-card fade-in"><div class="service-num">03</div><div class="service-title">Career &amp; Workplace Consultation</div><p class="service-desc">A neutral, experienced sounding board when you need clarity &mdash; not company politics.</p></div>
   </div>
+  <div class="fade-in" style="text-align:center; margin-top:2.5rem;">
+    <a href="LeighHR-OnePager.pdf" target="_blank" rel="noopener" style="font-size:0.85rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--slate); text-decoration:none; border-bottom:1px solid var(--gold); padding-bottom:2px;">Prefer it on one page? Download the LeighHR one-pager (PDF) &rarr;</a>
+  </div>
 </section>
 
 <section id="pricing">
@@ -269,7 +272,7 @@
     <div class="section-label">Investment</div>
     <h2 class="section-title">Transparent Pricing, Right-Sized to You</h2>
     <p style="font-size:1.05rem; line-height:1.85; color:var(--text-light); font-weight:300; margin-bottom:0;">
-      Fractional retainers from <strong style="color:var(--text); font-weight:500;">$2,500/month</strong>, or one-time project work &mdash; audits, restructures, AI+HI adoption, and more &mdash; from <strong style="color:var(--text); font-weight:500;">$3,000</strong>. No long-term contract required upfront. Tell me what you need, I'll tell you if I can fill it.
+      My preferred engagement model is a fractional retainer, paid in advance monthly or quarterly, starting at <strong style="color:var(--text); font-weight:500;">$2,500/month</strong> &mdash; ongoing partnership, not a per-task invoice. For one-time projects (audits, restructures, AI+HI adoption), let's talk first &mdash; pricing is scoped to the work, typically starting around <strong style="color:var(--text); font-weight:500;">$3,000</strong>.
     </p>
   </div>
 
@@ -316,7 +319,7 @@
       <div class="testimonial-year">Analytics Leader</div>
     </div>
     <div class="testimonial-card fade-in">
-      <p class="testimonial-text">She's not afraid to challenge even the senior-most executive when she feels her historical professional experience or employment law knowledge differs from the approach being proposed &mdash; and is able to listen and seek to understand the perspective of the most entry-level employee.</p>
+      <p class="testimonial-text">She's not afraid to challenge (professionally) even the senior most Executive when she feels her historical professional experience or employment law knowledge differs from the approach being proposed or discussed... she is able to listen and seek to understand the perspective of the most entry level employee...</p>
       <div class="testimonial-year">Managing Director &amp; Partner</div>
     </div>
     <div class="testimonial-card fade-in">
@@ -332,11 +335,11 @@
       <div class="testimonial-year">Executive Leader</div>
     </div>
     <div class="testimonial-card fade-in">
-      <p class="testimonial-text">An invaluable part of our team... hard-working, ambitious, and reliable. Her positive outlook comes through in her work and she is respected and appreciated by her colleagues. She would be an asset to any employer.</p>
+      <p class="testimonial-text">An invaluable part of our team... hard-working, ambitious, and reliable. Her positive outlook comes through in her work and she is respected and appreciated by her colleagues... She would be an asset to any employer.</p>
       <div class="testimonial-year">Managing Director</div>
     </div>
     <div class="testimonial-card fade-in">
-      <p class="testimonial-text">A department that once needed a lot of supervision from my area has become independent under her leadership. I have developed confidence in her decision making and leadership skills. What a blessing... for me personally!</p>
+      <p class="testimonial-text">I have developed confidence in her decision making and leadership skills. A department that once needed a lot of supervision from my area has become independent under her leadership. What a blessing... for me personally!</p>
       <div class="testimonial-year">CFO &amp; COO</div>
     </div>
     <div class="testimonial-card fade-in">
@@ -364,6 +367,7 @@
       <a href="mailto:jleigh@leighhr.com">jleigh@leighhr.com</a>
       <a href="https://leighhr.com">LeighHR.com</a>
       <a href="https://linkedin.com/in/jenny-leigh" target="_blank">linkedin.com/in/jenny-leigh</a>
+      <a href="LeighHR-OnePager.pdf" target="_blank" rel="noopener">LeighHR One-Pager (PDF)</a>
     </div>
   </div>
   <div class="fade-in">
